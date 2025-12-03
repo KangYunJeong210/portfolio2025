@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Yun Jeong | Web Designer Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Pretendard -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- <div class="header_port"></div> -->
+    <div class=""><img src="./img/Desktop3.png" alt="" style="
+    width: 100%;" class="img_pc">
+        <img src="./img/Desktop2m.png" alt="" style="
+        width: 100%;" class="img_m">
+    </div>
+    <!-- TOP BUTTON -->
+    <button class="btn-gohome visible" aria-label="" onclick="location.href='./index.html'">메인페이지로 돌아가기</button>
+    <button class="btn-top visible" aria-label="맨 위로">↑</button>
+
+
+
+    <script>
+        const btnTop = document.querySelector(".btn-top");
+        // 맨 위로 버튼
+        function updateTopButton() {
+            if (!btnTop) return;
+            btnTop.classList.toggle("visible", window.scrollY > 400);
+        }
+
+        if (btnTop) {
+            btnTop.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        }
+    </script>
+
+
+</body>
+
+</html>
