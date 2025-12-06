@@ -436,6 +436,10 @@ body {
     font-size: 16px;
 }
 
+.portfolio-tab {
+    padding: 8px 14px 8px 0 !important;
+}
+
 .portfolio-tab.active {
     /* background: #ffde73; */
     color: var(--primary-dark);
@@ -452,8 +456,19 @@ body {
 .portfolio-list.graphic {
     display: flex;
     flex-direction: row;
-    gap: 16px;
+    gap: 10px;
     flex-wrap: wrap;
+    justify-content: space-between;
+    word-break: keep-all;
+}
+
+.portfolio-list.content {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    word-break: keep-all;
 }
 
 .portfolio-item {
@@ -462,16 +477,56 @@ body {
     align-items: stretch;
     background: #fdfdfd;
     border-radius: 22px;
-    padding: 14px 0px;
-    /* box-shadow: 0 10px 24px rgba(62, 84, 160, 0.12); */
+    padding: 20px 20px;
+    box-shadow: 0 10px 24px rgba(136, 162, 255, 0.12);
+    cursor: pointer;
+
+}
+
+.portfolio-item:hover {
+    box-shadow: 0 10px 24px rgba(33, 43, 78, 0.12);
+    transition: 0.5s;
+}
+
+.portfolio-item button {
+    width: 120px;
+    background-color: #ffffff;
+    color: var(--primary);
+    border-radius: 36px;
+    border: 1px solid var(--primary);
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10px;
+
+}
+
+.portfolio-item button:hover {
+    background-color: var(--primary);
+    color: #fff;
+    transition: 0.3s;
+    font-weight: 700;
+
 }
 
 .portfolio-thumb img {
     display: block;
-    width: 190px;
+    width: 100%;
     height: auto;
     border-radius: 16px;
     object-fit: cover;
+}
+
+.graphic .portfolio-item {
+    gap: 18px;
+    width: 48.5%;
+}
+
+.content .portfolio-item {
+    gap: 18px;
+    width: 48.5%;
+    padding: 20px !important;
 }
 
 .portfolio-info {
@@ -486,6 +541,16 @@ body {
     font-size: 20px;
     font-weight: 600;
     margin: 0 0 14px;
+}
+
+.graphic .portfolio-title {
+    margin: 0 0 2px;
+    font-size: 16px;
+}
+
+.content .portfolio-title {
+    margin: 0 0 2px;
+    font-size: 16px;
 }
 
 .portfolio-meta {
@@ -606,14 +671,6 @@ body {
     background-color: #0950d4;
 }
 
-.img_pc {
-    display: block;
-}
-
-.img_m {
-    display: none;
-}
-
 /* ============ RESPONSIVE ============ */
 
 /* 태블릿 */
@@ -657,6 +714,12 @@ body {
 
     .portfolio-tab {
         padding: 0;
+    }
+}
+
+@media (max-width: 1300px) {
+    .graphic .portfolio-item {
+        width: 100% !important;
     }
 }
 
@@ -822,12 +885,9 @@ body {
         margin-bottom: 30px;
     }
 
-    .img_pc {
-        display: none;
-    }
 
-    .img_m {
-        display: block;
+    .portfolio-list.graphic .portfolio-item {
+        width: 100% !important;
     }
 }
 
